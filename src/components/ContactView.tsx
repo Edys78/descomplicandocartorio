@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle2, MessageCircle, Clock, AlertCircle } from 'lucide-react';
+import { Globe, Phone, Send, CheckCircle2, MessageCircle, Clock, AlertCircle } from 'lucide-react';
 
 export const ContactView: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -48,26 +48,18 @@ export const ContactView: React.FC = () => {
 
             <div className="space-y-4 text-sm font-body text-slate-700">
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+                <Globe className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-heading font-bold text-slate-900">Consultoria & Redação</p>
-                  <p>Av. Paulista, 1000 - Bela Vista</p>
-                  <p>São Paulo - SP, CEP 01310-100</p>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-red-600 shrink-0" />
-                <div>
-                  <p className="font-heading font-bold text-slate-900">E-mail Oficial</p>
-                  <p>contato@descomplicandocartorio.com.br</p>
+                  <p className="font-heading font-bold text-slate-900">Atendimento Nacional</p>
+                  <p>Consultoria especializada 100% online</p>
+                  <p>Atendimento para cartórios de todo o Brasil</p>
                 </div>
               </div>
 
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-red-600 shrink-0" />
                 <div>
-                  <p className="font-heading font-bold text-slate-900">Telefone / WhatsApp</p>
+                  <p className="font-heading font-bold text-slate-900">WhatsApp Oficial</p>
                   <p>+55 (11) 95687-0620</p>
                 </div>
               </div>

@@ -276,33 +276,4 @@ export const INITIAL_ARTICLES: Article[] = [
   }
 ];
 
-export const INITIAL_COMMENTS: Record<string, import('../types').Comment[]> = {
-  'art-destaque-01': [
-    {
-      id: 'c-1',
-      articleId: 'art-destaque-01',
-      author: 'Renata Vasconcelos',
-      content: 'Excelente explicação! Consegui retificar a certidão do meu bisavô italiano no cartório de Santos em apenas 15 dias graças à Lei 14.382.',
-      timestamp: '2 horas atrás',
-      likes: 24
-    },
-    {
-      id: 'c-2',
-      articleId: 'art-destaque-01',
-      author: 'Carlos Alberto Lima',
-      content: 'Muito claro o texto. A via administrativa economiza milhares de reais em custas judiciais.',
-      timestamp: '45 minutos atrás',
-      likes: 11
-    }
-  ],
-  'proc-genero-nome': [
-    {
-      id: 'c-3',
-      articleId: 'proc-genero-nome',
-      author: 'Lívia Andrade',
-      content: 'O Provimento 73 do CNJ garantiu dignidade e agilidade a esse processo fundamental.',
-      timestamp: '1 hora atrás',
-      likes: 19
-    }
-  ]
-};
+export const INITIAL_COMMENTS: Record<string, import('../types').Comment[]> = {};
