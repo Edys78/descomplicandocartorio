@@ -83,35 +83,35 @@ export const AuthModal: React.FC = () => {
   return (
     <div 
       id="modal-authentication"
-      className="fixed inset-0 z-50 overflow-y-auto bg-black/60 backdrop-blur-xs flex items-center justify-center p-4"
+      className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/70 backdrop-blur-xs flex items-center justify-center p-4"
     >
       <div 
-        className="bg-[#FAF7EE] text-[#1c1917] w-full max-w-md border-2 border-[#1c1917] p-6 sm:p-8 shadow-2xl relative animate-in fade-in zoom-in-95 duration-150"
+        className="bg-white text-slate-900 w-full max-w-md border-2 border-slate-900 rounded-lg p-6 sm:p-8 shadow-2xl relative animate-in fade-in zoom-in-95 duration-150"
       >
         {/* Close Button */}
         <button
           onClick={() => dispatch(closeAuthModal())}
-          className="absolute top-4 right-4 p-1.5 text-[#78716c] hover:text-[#1c1917] hover:bg-[#ede7d5] rounded transition-colors cursor-pointer"
+          className="absolute top-4 right-4 p-1.5 text-slate-400 hover:text-slate-900 hover:bg-slate-100 rounded transition-colors cursor-pointer"
         >
           <X className="w-5 h-5" />
         </button>
 
         {/* Masthead Header */}
         <div className="text-center mb-6">
-          <div className="flex items-center justify-center gap-1.5 text-[#c53030] mb-1">
+          <div className="flex items-center justify-center gap-1.5 text-red-600 mb-1">
             <Scale className="w-4 h-4" />
-            <span className="text-[10px] font-sans-ui font-black uppercase tracking-widest">PORTAL JURÍDICO</span>
+            <span className="text-[10px] font-heading font-extrabold uppercase tracking-widest">PORTAL JURÍDICO</span>
           </div>
-          <h2 className="font-headline font-black text-2xl sm:text-3xl text-[#1c1917] leading-none mb-1">
+          <h2 className="font-heading font-black text-2xl sm:text-3xl text-slate-900 leading-none mb-1">
             DESCOMPLICANDO CARTÓRIO
           </h2>
-          <p className="font-sans-ui text-xs font-bold uppercase tracking-widest text-[#c53030]">
+          <p className="font-heading text-xs font-bold uppercase tracking-widest text-red-600">
             {authModalMode === 'login' ? 'Área de Membros & Especialistas' : 'Cadastro de Novo Leitor'}
           </p>
         </div>
 
         {error && (
-          <div className="mb-4 p-3 bg-red-100 border border-red-300 text-red-800 text-xs font-sans-ui flex items-center gap-2 rounded">
+          <div className="mb-4 p-3 bg-red-100 border border-red-300 text-red-800 text-xs font-body flex items-center gap-2 rounded">
             <AlertCircle className="w-4 h-4 shrink-0" />
             <span>{error}</span>
           </div>
@@ -121,18 +121,18 @@ export const AuthModal: React.FC = () => {
         <form onSubmit={handleSubmit} className="space-y-4">
           {authModalMode === 'register' && (
             <div>
-              <label htmlFor="auth-name-input" className="block text-xs font-sans-ui font-bold uppercase tracking-wider text-[#57534e] mb-1">
+              <label htmlFor="auth-name-input" className="block text-xs font-heading font-bold uppercase tracking-wider text-slate-700 mb-1">
                 Nome Completo
               </label>
               <div className="relative">
-                <UserIcon className="w-4 h-4 text-[#78716c] absolute left-3 top-3" />
+                <UserIcon className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
                 <input
                   id="auth-name-input"
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Seu nome"
-                  className="w-full pl-9 pr-3 py-2.5 bg-[#FAF7EE] border border-[#d6cbaf] rounded font-sans-ui text-sm text-[#1c1917] focus:outline-hidden focus:border-[#1c1917]"
+                  className="w-full pl-9 pr-3 py-2.5 bg-white border border-slate-300 rounded-md font-body text-base text-slate-900 focus:outline-hidden focus:border-slate-900"
                   required
                 />
               </div>
@@ -140,36 +140,36 @@ export const AuthModal: React.FC = () => {
           )}
 
           <div>
-            <label htmlFor="auth-email-input" className="block text-xs font-sans-ui font-bold uppercase tracking-wider text-[#57534e] mb-1">
+            <label htmlFor="auth-email-input" className="block text-xs font-heading font-bold uppercase tracking-wider text-slate-700 mb-1">
               Endereço de E-mail
             </label>
             <div className="relative">
-              <Mail className="w-4 h-4 text-[#78716c] absolute left-3 top-3" />
+              <Mail className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
               <input
                 id="auth-email-input"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="seu.email@exemplo.com"
-                className="w-full pl-9 pr-3 py-2.5 bg-[#FAF7EE] border border-[#d6cbaf] rounded font-sans-ui text-sm text-[#1c1917] focus:outline-hidden focus:border-[#1c1917]"
+                className="w-full pl-9 pr-3 py-2.5 bg-white border border-slate-300 rounded-md font-body text-base text-slate-900 focus:outline-hidden focus:border-slate-900"
                 required
               />
             </div>
           </div>
 
           <div>
-            <label htmlFor="auth-password-input" className="block text-xs font-sans-ui font-bold uppercase tracking-wider text-[#57534e] mb-1">
+            <label htmlFor="auth-password-input" className="block text-xs font-heading font-bold uppercase tracking-wider text-slate-700 mb-1">
               Senha de Acesso
             </label>
             <div className="relative">
-              <Lock className="w-4 h-4 text-[#78716c] absolute left-3 top-3" />
+              <Lock className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
               <input
                 id="auth-password-input"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full pl-9 pr-3 py-2.5 bg-[#FAF7EE] border border-[#d6cbaf] rounded font-sans-ui text-sm text-[#1c1917] focus:outline-hidden focus:border-[#1c1917]"
+                className="w-full pl-9 pr-3 py-2.5 bg-white border border-slate-300 rounded-md font-body text-base text-slate-900 focus:outline-hidden focus:border-slate-900"
                 required
               />
             </div>
@@ -178,7 +178,7 @@ export const AuthModal: React.FC = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full py-3 bg-[#1c1917] hover:bg-[#c53030] text-white font-sans-ui font-bold text-xs uppercase tracking-widest rounded shadow-md transition-colors cursor-pointer disabled:opacity-50"
+            className="w-full py-3 bg-slate-900 hover:bg-red-600 text-white font-heading font-bold text-xs uppercase tracking-widest rounded-md shadow-md transition-colors cursor-pointer disabled:opacity-50"
           >
             {isLoading ? 'Autenticando...' : authModalMode === 'login' ? 'Entrar no Sistema' : 'Concluir Cadastro'}
           </button>
@@ -188,7 +188,7 @@ export const AuthModal: React.FC = () => {
         <div className="mt-4 text-center">
           <button
             onClick={() => dispatch(toggleAuthModalMode())}
-            className="text-xs font-sans-ui text-[#57534e] hover:text-[#c53030] underline cursor-pointer"
+            className="text-xs font-body text-slate-600 hover:text-red-600 underline cursor-pointer"
           >
             {authModalMode === 'login'
               ? 'Não possui conta? Cadastre-se gratuitamente.'
@@ -197,26 +197,26 @@ export const AuthModal: React.FC = () => {
         </div>
 
         {/* Fast Demo Profiles for Quick Testing */}
-        <div className="mt-6 pt-5 border-t border-[#d6cbaf]">
-          <p className="text-[11px] font-sans-ui font-bold uppercase tracking-wider text-[#78716c] mb-2 text-center">
+        <div className="mt-6 pt-5 border-t border-slate-200">
+          <p className="text-[11px] font-heading font-bold uppercase tracking-wider text-slate-500 mb-2 text-center">
             Perfis de Demonstração Rápida:
           </p>
           <div className="grid grid-cols-3 gap-2">
             <button
               onClick={() => handleFastDemoLogin('registrador')}
-              className="px-2 py-1.5 bg-[#e8e1cf] hover:bg-[#ded5be] text-[11px] font-sans-ui font-semibold rounded text-[#1c1917] border border-[#d6cbaf] transition-colors cursor-pointer"
+              className="px-2 py-1.5 bg-slate-100 hover:bg-slate-200 text-xs font-heading font-semibold rounded text-slate-900 border border-slate-300 transition-colors cursor-pointer"
             >
               🏛️ Souza Edy
             </button>
             <button
               onClick={() => handleFastDemoLogin('consultor')}
-              className="px-2 py-1.5 bg-[#e8e1cf] hover:bg-[#ded5be] text-[11px] font-sans-ui font-semibold rounded text-[#1c1917] border border-[#d6cbaf] transition-colors cursor-pointer"
+              className="px-2 py-1.5 bg-slate-100 hover:bg-slate-200 text-xs font-heading font-semibold rounded text-slate-900 border border-slate-300 transition-colors cursor-pointer"
             >
               ⚖️ Consultoria
             </button>
             <button
               onClick={() => handleFastDemoLogin('reader')}
-              className="px-2 py-1.5 bg-[#e8e1cf] hover:bg-[#ded5be] text-[11px] font-sans-ui font-semibold rounded text-[#1c1917] border border-[#d6cbaf] transition-colors cursor-pointer"
+              className="px-2 py-1.5 bg-slate-100 hover:bg-slate-200 text-xs font-heading font-semibold rounded text-slate-900 border border-slate-300 transition-colors cursor-pointer"
             >
               📖 Leitor
             </button>

@@ -45,17 +45,17 @@ export const CategoryView: React.FC<CategoryViewProps> = ({ category }) => {
   return (
     <div className="py-8 space-y-8" id={`category-view-${category.toLowerCase()}`}>
       {/* Category Header */}
-      <div className="border-b-2 border-[#1c1917] pb-4">
+      <div className="border-b-2 border-slate-900 pb-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
-            <span className="text-[#c53030] font-sans-ui font-black text-xs uppercase tracking-widest">
+            <span className="text-red-600 font-heading font-extrabold text-xs uppercase tracking-widest">
               GUIA JURÍDICO DE REGISTRO CIVIL
             </span>
-            <h2 className="font-headline font-black text-3xl sm:text-5xl text-[#1c1917] mt-1">
+            <h2 className="font-heading font-black text-3xl sm:text-5xl text-slate-900 mt-1">
               {category}
             </h2>
           </div>
-          <span className="text-xs font-sans-ui text-[#78716c] uppercase font-bold">
+          <span className="text-xs font-heading text-slate-500 uppercase font-bold">
             {filteredArticles.length} artigo{filteredArticles.length !== 1 ? 's' : ''} disponível{filteredArticles.length !== 1 ? 'is' : ''}
           </span>
         </div>
@@ -65,10 +65,10 @@ export const CategoryView: React.FC<CategoryViewProps> = ({ category }) => {
           <div className="mt-4 flex flex-wrap items-center gap-2 pt-2">
             <button
               onClick={() => dispatch(setActiveSubCategory({ category, subCategory: null as any }))}
-              className={`px-3 py-1.5 text-xs font-sans-ui font-bold uppercase tracking-wider rounded transition-colors cursor-pointer ${
+              className={`px-3.5 py-1.5 text-xs font-heading font-bold uppercase tracking-wider rounded transition-colors cursor-pointer ${
                 !activeSubCategory
-                  ? 'bg-[#1c1917] text-[#FAF7EE]'
-                  : 'bg-[#ede7d5] hover:bg-[#ded5be] text-[#44403c]'
+                  ? 'bg-slate-900 text-white'
+                  : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
               }`}
             >
               Todos os Guias de {category}
@@ -79,10 +79,10 @@ export const CategoryView: React.FC<CategoryViewProps> = ({ category }) => {
                 <button
                   key={sub}
                   onClick={() => dispatch(setActiveSubCategory({ category, subCategory: sub }))}
-                  className={`px-3 py-1.5 text-xs font-sans-ui font-bold rounded transition-colors flex items-center gap-1.5 cursor-pointer ${
+                  className={`px-3.5 py-1.5 text-xs font-heading font-bold rounded transition-colors flex items-center gap-1.5 cursor-pointer ${
                     isSelected
-                      ? 'bg-[#c53030] text-white'
-                      : 'bg-[#ede7d5] hover:bg-[#ded5be] text-[#44403c]'
+                      ? 'bg-red-600 text-white'
+                      : 'bg-slate-100 hover:bg-slate-200 text-slate-700'
                   }`}
                 >
                   <span>{sub}</span>
@@ -96,10 +96,10 @@ export const CategoryView: React.FC<CategoryViewProps> = ({ category }) => {
 
       {/* Articles Grid */}
       {filteredArticles.length === 0 ? (
-        <div className="p-12 text-center bg-[#f0ead8] border border-[#d6cbaf] space-y-3">
-          <BookOpenCheck className="w-10 h-10 text-[#78716c] mx-auto" />
-          <h3 className="font-headline font-bold text-xl text-[#1c1917]">Nenhum artigo encontrado nesta subdivisão</h3>
-          <p className="font-serif-body text-base text-[#57534e]">
+        <div className="p-12 text-center bg-slate-50 border border-slate-200 rounded-lg space-y-3">
+          <BookOpenCheck className="w-10 h-10 text-slate-400 mx-auto" />
+          <h3 className="font-heading font-bold text-xl text-slate-900">Nenhum artigo encontrado nesta subdivisão</h3>
+          <p className="font-body text-base text-slate-600">
             Estamos redigindo novos guias e manuais práticos para esta seção. Retorne ao índice geral de {category}.
           </p>
         </div>
@@ -111,11 +111,11 @@ export const CategoryView: React.FC<CategoryViewProps> = ({ category }) => {
               <article
                 key={article.id}
                 onClick={() => handleOpen(article.id)}
-                className="group cursor-pointer bg-[#f8f5eb] border border-[#e5dfd0] hover:border-[#1c1917] transition-all p-5 flex flex-col justify-between shadow-2xs hover:shadow-md"
+                className="group cursor-pointer bg-white border border-slate-200 hover:border-slate-900 rounded-lg transition-all p-5 flex flex-col justify-between shadow-xs hover:shadow-md"
               >
                 <div>
                   {article.imageUrl && (
-                    <div className="aspect-[16/10] overflow-hidden bg-[#e5dfd0] mb-4 border border-[#d6cbaf] relative">
+                    <div className="aspect-[16/10] overflow-hidden bg-slate-100 mb-4 rounded-md border border-slate-200 relative">
                       <img
                         src={article.imageUrl}
                         alt={article.title}
@@ -125,51 +125,51 @@ export const CategoryView: React.FC<CategoryViewProps> = ({ category }) => {
                         }}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                      <div className="absolute top-2 left-2 bg-[#1c1917]/90 text-white text-[10px] font-sans-ui font-bold px-2 py-0.5 uppercase tracking-wider">
+                      <div className="absolute top-2 left-2 bg-slate-900/90 text-white text-[10px] font-heading font-bold px-2 py-0.5 uppercase tracking-wider rounded">
                         {article.subCategory}
                       </div>
                     </div>
                   )}
 
-                  <div className="flex items-center justify-between text-xs font-sans-ui text-[#c53030] font-black uppercase tracking-wider mb-2">
+                  <div className="flex items-center justify-between text-xs font-heading text-red-600 font-extrabold uppercase tracking-wider mb-2">
                     <span>{article.legalBasis || article.subCategory}</span>
-                    <span className="text-[#78716c] font-normal flex items-center gap-1">
-                      <Clock className="w-3 h-3" />
+                    <span className="text-slate-500 font-normal font-body flex items-center gap-1">
+                      <Clock className="w-3.5 h-3.5" />
                       {article.readTime}
                     </span>
                   </div>
 
-                  <h3 className="font-headline font-bold text-xl text-[#1c1917] leading-snug mb-2 group-hover:text-[#c53030] transition-colors">
+                  <h3 className="font-heading font-bold text-xl text-slate-900 leading-snug mb-2 group-hover:text-red-600 transition-colors">
                     {article.title}
                   </h3>
 
-                  <p className="font-serif-body text-sm sm:text-base text-[#57534e] line-clamp-3 mb-4">
+                  <p className="font-body text-base text-slate-700 line-clamp-3 mb-4">
                     {article.excerpt}
                   </p>
 
                   {/* Required Docs Badge if available */}
                   {article.requiredDocs && (
-                    <div className="mb-4 bg-[#ede7d5] p-2 rounded text-[11px] font-sans-ui text-[#44403c] border border-[#d6cbaf]">
-                      <span className="font-bold text-[#1c1917] block mb-0.5 flex items-center gap-1">
-                        <FileText className="w-3 h-3 text-[#c53030]" /> Documentos Chave:
+                    <div className="mb-4 bg-slate-50 p-2.5 rounded text-xs font-body text-slate-700 border border-slate-200">
+                      <span className="font-heading font-bold text-slate-900 block mb-1 flex items-center gap-1">
+                        <FileText className="w-3.5 h-3.5 text-red-600" /> Documentos Chave:
                       </span>
-                      <p className="line-clamp-2 italic">{article.requiredDocs.join(', ')}</p>
+                      <p className="line-clamp-2">{article.requiredDocs.join(', ')}</p>
                     </div>
                   )}
                 </div>
 
-                <div className="pt-3 border-t border-[#d6cbaf] flex items-center justify-between text-xs font-sans-ui text-[#78716c]">
-                  <span className="text-[#57534e] font-medium">{article.author.name} — {article.author.role}</span>
+                <div className="pt-3 border-t border-slate-200 flex items-center justify-between text-xs font-body text-slate-600">
+                  <span className="text-slate-700 font-medium">{article.author.name} — {article.author.role}</span>
                   <div className="flex items-center gap-2">
                     <button
                       type="button"
                       onClick={(e) => handleToggleBookmark(e, article.id)}
-                      className={`p-1 cursor-pointer ${isBookmarked ? 'text-[#c53030]' : 'text-[#a8a29e] hover:text-[#1c1917]'}`}
+                      className={`p-1 cursor-pointer ${isBookmarked ? 'text-red-600' : 'text-slate-400 hover:text-slate-900'}`}
                       title={isBookmarked ? 'Remover dos salvos' : 'Salvar artigo'}
                     >
-                      <Bookmark className={`w-3.5 h-3.5 ${isBookmarked ? 'fill-[#c53030]' : ''}`} />
+                      <Bookmark className={`w-3.5 h-3.5 ${isBookmarked ? 'fill-red-600' : ''}`} />
                     </button>
-                    <span className="text-[#1c1917] group-hover:translate-x-0.5 transition-transform">
+                    <span className="text-slate-900 group-hover:translate-x-1 transition-transform">
                       <ChevronRight className="w-4 h-4" />
                     </span>
                   </div>

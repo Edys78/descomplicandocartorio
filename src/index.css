@@ -2,49 +2,69 @@
 
 @layer base {
   body {
-    font-family: 'Newsreader', 'EB Garamond', Georgia, serif;
-    background-color: #FAF7EE;
-    color: #1c1917;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #ffffff;
+    color: #0f172a;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+    font-weight: 700;
   }
 }
 
+.font-heading {
+  font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Backward compatibility aliases mapping to the two sans-serif families */
 .font-masthead {
-  font-family: 'UnifrakturMaguntia', 'Cinzel Decorative', 'Playfair Display', Georgia, serif;
+  font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
 }
 
 .font-headline {
-  font-family: 'Newsreader', 'Playfair Display', Georgia, serif;
+  font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
 }
 
 .font-serif-body {
-  font-family: 'EB Garamond', Georgia, serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 .font-sans-ui {
-  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 .font-cinzel {
-  font-family: 'Cinzel', serif;
+  font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
 }
 
-/* Classic Newspaper Rules */
+/* Contemporary Clean Editorial Rules */
 .newspaper-double-border {
-  border-top: 3px double #1c1917;
-  border-bottom: 3px double #1c1917;
+  border-top: 3px double #0f172a;
+  border-bottom: 3px double #0f172a;
 }
 
 .newspaper-single-border {
-  border-top: 1px solid #1c1917;
-  border-bottom: 1px solid #1c1917;
+  border-top: 1px solid #0f172a;
+  border-bottom: 1px solid #0f172a;
 }
 
 .newspaper-top-border {
-  border-top: 1px solid #292524;
+  border-top: 1px solid #0f172a;
 }
 
 .newspaper-bottom-border {
-  border-bottom: 1px solid #292524;
+  border-bottom: 1px solid #0f172a;
 }
 
 /* Custom scrollbars */
@@ -53,12 +73,13 @@
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #f4efe2;
+  background: #f8fafc;
 }
 ::-webkit-scrollbar-thumb {
-  background: #d6cbaf;
+  background: #cbd5e1;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #a89f89;
+  background: #94a3b8;
 }
+

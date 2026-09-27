@@ -14,7 +14,7 @@ export default function App() {
   const activeCategory = useAppSelector((state) => state.news.activeCategory);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF7EE] text-[#1c1917] selection:bg-[#c53030] selection:text-white relative">
+    <div className="min-h-screen flex flex-col bg-white text-slate-900 selection:bg-red-600 selection:text-white relative">
       {/* 1. Header with Live Brasília Calendar, Masthead and Navigation */}
       <Header />
 
@@ -30,7 +30,7 @@ export default function App() {
               </div>
 
               {/* Divider on Desktop */}
-              <div className="hidden lg:block lg:col-span-1 lg:w-px lg:bg-[#d6cbaf] lg:mx-auto h-full min-h-[500px]" />
+              <div className="hidden lg:block lg:col-span-1 lg:w-px lg:bg-slate-200 lg:mx-auto h-full min-h-[500px]" />
 
               {/* Right Column: Últimos Guias */}
               <div className="lg:col-span-4 xl:col-span-4">
