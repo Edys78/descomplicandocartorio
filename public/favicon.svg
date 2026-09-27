@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dc2626" />
+      <stop offset="100%" stop-color="#991b1b" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+  </defs>
+  <!-- Background Shield / Rounded Square -->
+  <rect x="4" y="4" width="92" height="92" rx="22" fill="#0f172a" stroke="#dc2626" stroke-width="3" />
+  
+  <!-- Outer Gold Accent Ring -->
+  <circle cx="50" cy="50" r="38" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.8"/>
+
+  <!-- Stylized Scales of Justice & Notary Emblem -->
+  <!-- Top Balance Beam -->
+  <path d="M 28 36 L 72 36" stroke="#f8fafc" stroke-width="3.5" stroke-linecap="round" />
+  <circle cx="50" cy="36" r="4.5" fill="url(#primaryGrad)" stroke="#f8fafc" stroke-width="2" />
+  
+  <!-- Central Column / Sword of Justice -->
+  <path d="M 50 25 L 50 72" stroke="#f8fafc" stroke-width="3.5" stroke-linecap="round" />
+  
+  <!-- Left Scale Pan -->
+  <path d="M 32 36 L 24 50 L 40 50 Z" fill="none" stroke="url(#goldGrad)" stroke-width="2.5" stroke-linejoin="round" />
+  <path d="M 22 50 C 22 56 42 56 42 50" fill="url(#primaryGrad)" stroke="url(#goldGrad)" stroke-width="2" />
+
+  <!-- Right Scale Pan -->
+  <path d="M 68 36 L 60 50 L 76 50 Z" fill="none" stroke="url(#goldGrad)" stroke-width="2.5" stroke-linejoin="round" />
+  <path d="M 58 50 C 58 56 78 56 78 50" fill="url(#primaryGrad)" stroke="url(#goldGrad)" stroke-width="2" />
+
+  <!-- Base Pedestal -->
+  <path d="M 34 76 L 66 76" stroke="#f8fafc" stroke-width="4" stroke-linecap="round" />
+  <path d="M 40 72 L 60 72" stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round" />
+
+  <!-- Stamp / Wax Seal Highlight at Center Bottom -->
+  <circle cx="50" cy="62" r="6" fill="url(#primaryGrad)" stroke="#f8fafc" stroke-width="1.5" />
+</svg>
