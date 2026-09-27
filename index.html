@@ -13,6 +13,44 @@
     <meta property="og:description" content="Guia prático e blog especializado em procedimentos de Cartório de Registro Civil: retificações de nascimento, casamento e óbito, alteração de prenome, patronímico e gênero." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="netlify-drawer" content="disable" />
+    <meta name="netlify-feedback" content="disable" />
+    <script>
+      (function() {
+        function removeNetlifyDrawer() {
+          var selectors = [
+            '#netlify-drawer',
+            'iframe#netlify-drawer',
+            '[data-netlify-drawer]',
+            '[data-netlify-feedback]',
+            'netlify-drawer',
+            'div[id*="netlify-drawer"]',
+            'iframe[src*="netlify"]',
+            'iframe[title*="Netlify"]',
+            'div[class*="netlify-drawer"]',
+            'div[class*="NetlifyDrawer"]',
+            '#netlify-identity-widget',
+            '[aria-label*="Netlify Drawer"]',
+            '[aria-label*="Netlify feedback"]'
+          ];
+          for (var i = 0; i < selectors.length; i++) {
+            var items = document.querySelectorAll(selectors[i]);
+            for (var j = 0; j < items.length; j++) {
+              items[j].remove();
+            }
+          }
+        }
+        removeNetlifyDrawer();
+        document.addEventListener('DOMContentLoaded', removeNetlifyDrawer);
+        window.addEventListener('load', removeNetlifyDrawer);
+        if (typeof MutationObserver !== 'undefined') {
+          var obs = new MutationObserver(function() {
+            removeNetlifyDrawer();
+          });
+          obs.observe(document.documentElement, { childList: true, subtree: true });
+        }
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">

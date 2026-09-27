@@ -2,6 +2,26 @@
   publish = "dist"
   command = "npm run build"
 
+[build.environment]
+  NETLIFY_DRAWER = "false"
+  NETLIFY_FEEDBACK = "false"
+  NETLIFY_COLLABORATION_TOOLS = "false"
+
+[context.production.environment]
+  NETLIFY_DRAWER = "false"
+  NETLIFY_FEEDBACK = "false"
+  NETLIFY_COLLABORATION_TOOLS = "false"
+
+[context.deploy-preview.environment]
+  NETLIFY_DRAWER = "false"
+  NETLIFY_FEEDBACK = "false"
+  NETLIFY_COLLABORATION_TOOLS = "false"
+
+[context.branch-deploy.environment]
+  NETLIFY_DRAWER = "false"
+  NETLIFY_FEEDBACK = "false"
+  NETLIFY_COLLABORATION_TOOLS = "false"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
