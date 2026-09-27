@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Newsreader', 'EB Garamond', Georgia, serif;
+    background-color: #FAF7EE;
+    color: #1c1917;
+  }
+}
+
+.font-masthead {
+  font-family: 'UnifrakturMaguntia', 'Cinzel Decorative', 'Playfair Display', Georgia, serif;
+}
+
+.font-headline {
+  font-family: 'Newsreader', 'Playfair Display', Georgia, serif;
+}
+
+.font-serif-body {
+  font-family: 'EB Garamond', Georgia, serif;
+}
+
+.font-sans-ui {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+/* Classic Newspaper Rules */
+.newspaper-double-border {
+  border-top: 3px double #1c1917;
+  border-bottom: 3px double #1c1917;
+}
+
+.newspaper-single-border {
+  border-top: 1px solid #1c1917;
+  border-bottom: 1px solid #1c1917;
+}
+
+.newspaper-top-border {
+  border-top: 1px solid #292524;
+}
+
+.newspaper-bottom-border {
+  border-bottom: 1px solid #292524;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f4efe2;
+}
+::-webkit-scrollbar-thumb {
+  background: #d6cbaf;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a89f89;
+}

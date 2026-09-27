@@ -1,0 +1,6 @@
+{
+  "name": "Descomplicando Cartório",
+  "description": "Guia prático e blog especializado em procedimentos de Cartório de Registro Civil: retificações de nascimento, casamento e óbito, alteração de prenome, patronímico e gênero.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
